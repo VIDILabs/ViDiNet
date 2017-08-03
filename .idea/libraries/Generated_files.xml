@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/dist/express-app/app.js" />
+        <item url="file://$PROJECT_DIR$/dist/express-app/public/javascripts/swaptab.js" />
+        <item url="file://$PROJECT_DIR$/dist/main.js" />
+        <item url="file://$PROJECT_DIR$/dist/express-app/routes/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/express-app/public/javascripts/update.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/dist/express-app/app.js" />
+      <root url="file://$PROJECT_DIR$/dist/express-app/public/javascripts/swaptab.js" />
+      <root url="file://$PROJECT_DIR$/dist/main.js" />
+      <root url="file://$PROJECT_DIR$/dist/express-app/routes/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/express-app/public/javascripts/update.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

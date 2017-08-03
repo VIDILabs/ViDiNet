@@ -1,0 +1,149 @@
+body {
+    font: 14px "Lato", sans-serif;
+    color: white;
+}
+
+#body-color {
+    background-color: black;
+}
+
+a {
+    color: #00B7FF;
+}
+
+h1 {
+    font: 14px "Lato", sans-serif;
+    color: white;
+}
+
+#container {
+    background-color: black;
+    height: 100vh;
+}
+
+#header {
+    border-bottom: 1px solid;
+    border-color: white;
+}
+
+/* Library related */
+#library {
+    background-color: black;
+    height: 100vh;
+    font: 14px "Lato", sans-serif;
+    color: white;
+    padding-right: 0px;
+}
+
+.icon {
+    height: 100px;
+}
+
+.icon-tab {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-color: black;
+}
+
+.icon-tab:hover {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+.active {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+#logo-container {
+    text-align: center;
+}
+
+#logo {
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* preview panel */
+
+#preview {
+    background-color: #292929;
+    height: 100%;
+    font: 14px "Lato", sans-serif;
+    border-left: 1px solid;
+
+    color: white;
+}
+
+div#preview-container {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#demo-title {
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+#launch-demo {
+    margin-top: 100px;
+}
+
+#launch-btn {
+    margin-top: 25px;
+    font-size: 28px;
+    height: 75px;
+    width: 25%;
+}
+
+#desc-text {
+    font-size: 18px;
+    font-family: Lato, sans-serif;
+}
+
+/*image preview*/
+
+#thumbs {
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+
+#thumbs a {
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+
+#img-thumb img {
+    min-height: 100px;
+    max-height: 300px;
+    height: 150px;
+}
+
+/*Search*/
+
+#search {
+    position: absolute;
+    bottom: 18px;
+    right: 115px;
+
+}
+
+#search-container {
+    position: relative;
+}

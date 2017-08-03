@@ -1,0 +1,29 @@
+<div id="preview-container">
+    <div id="launch-demo" class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <h1>{{title}}</h1>
+        </div>
+        <!--Launch Button-->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <button id="launch-btn" type="button" class="btn btn-primary">Launch</button>
+        </div>
+    </div>
+    <div id="addtional-content" class="row">
+        <!-- Images & Description-->
+        <div id="img-carousel" class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div id="thumbs">
+                {{#each images}}
+                    <a id="img-thumb" href="#"><img src="images/{{this}}" alt=""/></a>
+                {{/each}}
+                <span class="stretch"></span>
+            </div>​
+        </div>
+        <div id="description" class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <p id="desc-text">
+                {{description}}
+            </p>
+        </div>
+        <div id="collaborators" class="col-6 col-sm-6 col-md-6 col-lg-6"></div>
+    </div>
+
+</div>
