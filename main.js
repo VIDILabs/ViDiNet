@@ -4,6 +4,9 @@ const electron = require("electron"),
 
 let mainWindow;
 
+//Works in this context...
+
+
 function createWindow() {
     mainWindow = new BrowserWindow({
         autoHideMenuBar: true,
@@ -12,7 +15,7 @@ function createWindow() {
     });
     console.log("Making window...");
     mainWindow.loadURL(`file://${__dirname}/index.html`);
-    // mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
     mainWindow.on("closed", function() {
         mainWindow = null;
     });

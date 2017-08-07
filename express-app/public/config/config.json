@@ -1,5 +1,6 @@
 [{
   "title":"Mapping Migrations",
+  "app-name":"test.docx",
   "icon-img": "placeholder-icon.png",
   "images": ["oceantracks.png","visitors.JPG","oceantracks.png"],
   "description": "Mapping Migrations is a collaboration with the Exploratorium that uses data from the TOPP program to create an interactive exhibit that allows museum visitors to explore migratory marine animal trajectories over time. Data from the TOPP program can be used to characterize a multitude of marine animals behaviors in response to factors such as environmental and biological variables. Visualizations of the marine animals trajectories over a year are accompanied by the ability to highlight the tagging location and sex patterns such that visitors can make meaningful comparisons of these data attributes. The exhibit is currently on display in the life science section of the Exploratorium.",
@@ -7,6 +8,7 @@
 },
 {
   "title": "Plankton Populations",
+  "app-name":"test.docx",
   "icon-img": "placeholder-icon.png",
   "images": [""],
   "description": "Living Liquid is a collaboration with the Exploratorium and the Darwin Project to create an interactive exhibit showing the growth and localization of phytoplankton in the world’s oceans. Phytoplankton are microscopic autotrophs, responsible for half of the world’s oxygen production. Visualizations of an ocean circulation model and a plankton simulation are combined with object-based and touch interactions to allow users to explore and investigate plankton populations all over the world. The exhibit is currently on display in the life science section of the Exploratorium.",

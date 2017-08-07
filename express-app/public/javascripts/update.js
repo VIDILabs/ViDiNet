@@ -11,7 +11,7 @@ $.ajax({
     dataType : 'json',
     url: '/ajax',
     success : function(response) {
-        console.log(response["data"]);
+        // console.log(response["data"]);
         var html = response["data"];
         $("#preview").html(html);
     }
@@ -25,9 +25,23 @@ function updatePreview(div_id){
         dataType : 'json',
         url: '/ajax',
         success : function(response) {
-            console.log(response["data"]);
+            // console.log(response["data"]);
             var html = response["data"];
             $("#preview").html(html);
+        }
+    });
+}
+
+function openApplication(aName){
+    $.ajax({
+        type : 'POST',
+        data: {filename: "?", application: aName},
+        dataType : 'json',
+        url: '/open-app',
+        success : function(response) {
+            console.log(response["data"]);
+            //If button pressed and success then don't allow the launch to be pressed again
+            console.log("Request to open app");
         }
     });
 }

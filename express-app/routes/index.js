@@ -40,4 +40,15 @@ router.post('/ajax', function(req, res) {
     }
 });
 
+router.post('/open-app',function(req,res){
+    if(req.xhr || req.accepts('json,html')==='json'){
+        //Send the request to open the current application
+        var aName = req.body["application"];
+        process.send(aName);
+        res.json({success: true, data: aName}); //For debugging
+    } else {
+        res.redirect(303, '/ajax');
+    }
+});
+
 module.exports = router;

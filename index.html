@@ -58,20 +58,32 @@
 <webview id="expressApp" class="expressApp" ></webview>
 
 <script>
+    console.log("hello?")
     window.$ = window.jQuery = require("./node_modules/jquery/dist/jquery.min.js");
+    const electron = require("electron");
+
 
     const expressAppUrl = "http://127.0.0.1:3000",
         spawn = require("child_process").spawn,
         // For electron-packager change cwd in spawn to app.getAppPath() and
         // uncomment the app require below
         //app = require('electron').remote.app,
-        node = spawn("node", ["./express-app/bin/www"], { cwd: process.cwd() }),
+        node = spawn("node", ["./express-app/bin/www"], { cwd: process.cwd(),  stdio: [null, null, null, 'ipc']}),
         request = require("request"),
         _ = require("lodash"),
         key = require("keymaster"),
         $serverLog = $("#serverLog"),
         $expressApp = $("#expressApp"),
         $loading = $("#loading");
+
+    //receives messages from the express-application, these messages are explicitly to open a demo
+    node.on('message', function(data) {
+        //Handle request to open application here
+
+         //Data in this case should be the script name that needs to be opened.
+         const shell = electron.shell;
+         shell.openExternal(`file://${__dirname}/` + data);
+    });
 
     key("a", () => {
         if ($serverLog.css("display") === "none") {
