@@ -99,7 +99,10 @@
     if (process.platform === 'darwin') {
         //OSX
 
-        const darwin_node = spawn("node", ["./express-app/bin/www"], {cwd: process.cwd(), stdio: [null, null, null, 'ipc']})
+        const darwin_node = spawn("node", ["./express-app/bin/www"], {
+            cwd: process.cwd(),
+            stdio: [null, null, null, 'ipc']
+        })
 
         //receives messages from the express-application, these messages are explicitly to open a demo
         darwin_node.on('message', function (data) {
@@ -107,7 +110,16 @@
 
             //If running a script, check if script is already running
             if (data === "script") {
-
+                script = require("child_process").exec('./run.sh', {
+                        cwd: '/Users/keshavdasu/Documents/MyDocs/livingliquidjs' //Change this to the give path....
+                    },
+                    function (error, stdout, stderr) {
+                        console.log('stdout: ' + stdout);
+                        console.log('stderr: ' + stderr);
+                        if (error !== null) {
+                            console.log('exec error: ' + error);
+                        }
+                    });
 
             } else {
                 //If running an exe
@@ -119,10 +131,10 @@
 
         redirectOutput(darwin_node.stdout);
         redirectOutput(darwin_node.stderr);
-    } else if (process.platform === 'win32'){
+    } else if (process.platform === 'win32') {
         //WINDOWS
 
-        const win_node = spawn(".\\node.exe", ["./express-app/bin/www"], { cwd: process.cwd()});
+        const win_node = spawn(".\\node.exe", ["./express-app/bin/www"], {cwd: process.cwd()});
 
         //receives messages from the express-application, these messages are explicitly to open a demo
         win_node.on('message', function (data) {
@@ -149,6 +161,8 @@
         console.log($localDemo.css("width"));
         if ($localDemo.css("width") === "0px") {
             $localDemo.removeClass("localDemoHide");
+            var refreshDemo =  document.getElementById('localDemo');
+            refreshDemo.reload(); //refresh the localhost view...
             $expressApp.addClass("expressAppHide");
         } else {
             $expressApp.removeClass("expressAppHide");

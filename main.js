@@ -17,8 +17,8 @@ const menu = Menu.buildFromTemplate(template)
 function createWindow() {
     mainWindow = new BrowserWindow({
         autoHideMenuBar: true,
-        width: 640,
-        height: 480
+        width: 1068,
+        height: 600
     });
     console.log("Making window...");
     mainWindow.loadURL(`file://${__dirname}/index.html`);

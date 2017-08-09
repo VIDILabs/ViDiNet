@@ -1,6 +1,7 @@
 [{
   "title":"Mapping Migrations",
-  "app-name":"test.docx",
+  "app-name":"script",
+  "pathtoscript": "/Users/keshavdasu/Documents/MyDocs/livingliquidjs",
   "icon-img": "placeholder-icon.png",
   "images": ["oceantracks.png","visitors.JPG","oceantracks.png"],
   "description": "Mapping Migrations is a collaboration with the Exploratorium that uses data from the TOPP program to create an interactive exhibit that allows museum visitors to explore migratory marine animal trajectories over time. Data from the TOPP program can be used to characterize a multitude of marine animals behaviors in response to factors such as environmental and biological variables. Visualizations of the marine animals trajectories over a year are accompanied by the ability to highlight the tagging location and sex patterns such that visitors can make meaningful comparisons of these data attributes. The exhibit is currently on display in the life science section of the Exploratorium.",
