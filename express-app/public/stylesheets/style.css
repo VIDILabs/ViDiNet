@@ -10,7 +10,7 @@ body {
 }
 
 a {
-    color: #00B7FF;
+    color: white;
     text-decoration: none !important;
 }
 
@@ -29,7 +29,8 @@ h1 {
     border-bottom: 1px solid;
     border-color: white;
 }
-#row{
+
+#row {
     width: 10px;
 }
 
@@ -85,7 +86,7 @@ h1 {
 #preview {
     background-color: #292929;
     height: 100vh;
-    width:100%;
+    width: 100%;
     font: 14px "Lato", sans-serif;
     border-left: 1px solid;
     color: white;
@@ -100,7 +101,7 @@ div#preview-container {
 #demo-title {
     margin-bottom: 0px;
     padding-bottom: 10px;
-
+    color: white;
 }
 
 #launch-demo {
@@ -113,18 +114,20 @@ div#preview-container {
     height: 75px;
     width: 25%;
 }
-#description{
+
+#description {
     width: 500px;
 }
+
 #desc-text {
     font-size: 18px;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
 }
 
-#title{
+#title {
     position: relative;
-    margin-top: -60px; 
+    margin-top: -60px;
 }
 
 /*image preview*/
@@ -159,3 +162,14 @@ div#preview-container {
     height: 150px;
 }
 
+.btn-secondary {
+    color: #ffffff;
+    background-color: #777;
+    border-color: #555;
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open .dropdown-toggle.btn-secondary {
+    color: #ffffff;
+    background-color: #888;
+    border-color: #444;
+}
