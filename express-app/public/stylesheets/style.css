@@ -1,6 +1,8 @@
 body {
     font: 14px "Lato", sans-serif;
     color: white;
+    padding: 0px;
+    margin: 0px;
 }
 
 #body-color {
@@ -9,6 +11,7 @@ body {
 
 a {
     color: #00B7FF;
+    text-decoration: none !important;
 }
 
 h1 {
@@ -18,12 +21,16 @@ h1 {
 
 #container {
     background-color: black;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 #header {
     border-bottom: 1px solid;
     border-color: white;
+}
+#row{
+    width: 10px;
 }
 
 /* Library related */
@@ -33,15 +40,16 @@ h1 {
     font: 14px "Lato", sans-serif;
     color: white;
     padding-right: 0px;
+    width: 250px;
 }
 
 .icon {
-    height: 100px;
+    height: 70px;
 }
 
 .icon-tab {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align: center;
     background-color: black;
 }
@@ -54,10 +62,13 @@ h1 {
 .active {
     -webkit-filter: invert(100%);
     filter: invert(100%);
+    text-decoration: none !important;
 }
 
 #logo-container {
     text-align: center;
+    justify-content: center;
+    margin-left: 25px;
 }
 
 #logo {
@@ -71,10 +82,11 @@ h1 {
 #preview {
     background-color: #292929;
     height: 100%;
+    width:100%;
     font: 14px "Lato", sans-serif;
     border-left: 1px solid;
-
     color: white;
+    padding-bottom: 20px;
 }
 
 div#preview-container {
@@ -85,6 +97,7 @@ div#preview-container {
 #demo-title {
     margin-bottom: 0px;
     padding-bottom: 10px;
+
 }
 
 #launch-demo {
@@ -97,10 +110,18 @@ div#preview-container {
     height: 75px;
     width: 25%;
 }
-
+#description{
+    width: 500px;
+}
 #desc-text {
     font-size: 18px;
-    font-family: Lato, sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+#title{
+    position: relative;
+    margin-top: -60px; 
 }
 
 /*image preview*/
@@ -135,15 +156,3 @@ div#preview-container {
     height: 150px;
 }
 
-/*Search*/
-
-#search {
-    position: absolute;
-    bottom: 18px;
-    right: 115px;
-
-}
-
-#search-container {
-    position: relative;
-}

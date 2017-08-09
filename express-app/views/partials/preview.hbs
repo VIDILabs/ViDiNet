@@ -1,12 +1,9 @@
 <div id="preview-container">
     <div id="launch-demo" class="row">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="title" class="col-12 col-sm-12 col-md-12 col-lg-12">
             <h1>{{title}}</h1>
         </div>
-        <!--Launch Button-->
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-            <button id="launch-btn" type="button" onclick="openApplication('{{app-name}}')" class="btn btn-primary">Launch</button>
-        </div>
+        
     </div>
     <div id="addtional-content" class="row">
         <!-- Images & Description-->
@@ -18,12 +15,15 @@
                 <span class="stretch"></span>
             </div>​
         </div>
-        <div id="description" class="col-6 col-sm-6 col-md-6 col-lg-6">
+        <div id="description" class="col-12 col-sm-12 col-md-12 col-lg-12">
             <p id="desc-text">
                 {{description}}
             </p>
         </div>
-        <div id="collaborators" class="col-6 col-sm-6 col-md-6 col-lg-6"></div>
+        <!--Launch Button-->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <button id="launch-btn" type="button" onclick="openApplication('{{app-name}}')" class="btn btn-primary">Launch</button>
+        </div>
     </div>
 
 </div>
