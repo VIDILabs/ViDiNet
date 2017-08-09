@@ -119,14 +119,20 @@ div#preview-container {
     width: 500px;
 }
 
-#desc-text {
+/*#desc-text {
     font-size: 18px;
     font-family: 'Lato', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
+}*/
+
+#desc-text {
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
 }
 
 #title {
-    position: relative;
+    position: relative
     margin-top: -60px;
 }
 
