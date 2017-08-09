@@ -18,7 +18,9 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         autoHideMenuBar: true,
         width: 1068,
-        height: 600
+        height: 600,
+        minWidth: 1068,
+        minHeight: 600
     });
     console.log("Making window...");
     mainWindow.loadURL(`file://${__dirname}/index.html`);
