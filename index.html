@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=VT323" rel='stylesheet' type='text/css'/>
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=VT323"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
           crossorigin="anonymous">
 
     <style>
@@ -49,6 +51,19 @@
             width: 0px;
             height: 0px;
         }
+
+        .localDemo {
+            display: flex !important;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .localDemoHide {
+            flex: 0 1;
+            width: 0px;
+            height: 0px;
+        }
     </style>
 </head>
 
@@ -57,44 +72,99 @@
     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
 </div>
 <div id="serverLog"></div>
-<webview id="expressApp" class="expressApp" ></webview>
+<webview id="expressApp" class="expressApp"></webview>
+<webview id="localDemo" class="localDemo localDemoHide" src="http://localhost:3000/"></webview>
 
 <script>
-    console.log("hello?")
     window.$ = window.jQuery = require("./node_modules/jquery/dist/jquery.min.js");
     const electron = require("electron");
 
+    // 'darwin' for mac
+    // 'win32' for windows (doesn't matter the architecture)
+    console.log(process.platform);
 
-    const expressAppUrl = "http://127.0.0.1:3000",
+    const expressAppUrl = "http://127.0.0.1:3030",
         spawn = require("child_process").spawn,
         // For electron-packager change cwd in spawn to app.getAppPath() and
         // uncomment the app require below
         //app = require('electron').remote.app,
-        node = spawn("node", ["./express-app/bin/www"], { cwd: process.cwd(),  stdio: [null, null, null, 'ipc']}),
         request = require("request"),
         _ = require("lodash"),
         key = require("keymaster"),
         $serverLog = $("#serverLog"),
         $expressApp = $("#expressApp"),
+        $localDemo = $("#localDemo"),
         $loading = $("#loading");
 
-    //receives messages from the express-application, these messages are explicitly to open a demo
-    node.on('message', function(data) {
-        //Handle request to open application here
+    if (process.platform === 'darwin') {
+        //OSX
 
-         //Data in this case should be the script name that needs to be opened.
-         const shell = electron.shell;
-         shell.openExternal(`file://${__dirname}/` + data);
-    });
+        const darwin_node = spawn("node", ["./express-app/bin/www"], {cwd: process.cwd(), stdio: [null, null, null, 'ipc']})
+
+        //receives messages from the express-application, these messages are explicitly to open a demo
+        darwin_node.on('message', function (data) {
+            //Data in this case should be the script name that needs to be opened.
+
+            //If running a script, check if script is already running
+            if (data === "script") {
+
+
+            } else {
+                //If running an exe
+                const shell = electron.shell;
+                shell.openExternal(`file://${__dirname}/` + data);
+            }
+
+        });
+
+        redirectOutput(darwin_node.stdout);
+        redirectOutput(darwin_node.stderr);
+    } else if (process.platform === 'win32'){
+        //WINDOWS
+
+        const win_node = spawn(".\\node.exe", ["./express-app/bin/www"], { cwd: process.cwd()});
+
+        //receives messages from the express-application, these messages are explicitly to open a demo
+        win_node.on('message', function (data) {
+            //Data in this case should be the script name that needs to be opened.
+
+            //If running a script, check if script is already running
+            if (data === "script") {
+
+
+            } else {
+                //If running an exe
+                const shell = electron.shell;
+                shell.openExternal(`file://${__dirname}/` + data);
+            }
+
+        });
+
+        redirectOutput(win_node.stdout);
+        redirectOutput(win_node.stderr);
+    }
+
 
     key("a", () => {
+        console.log($localDemo.css("width"));
+        if ($localDemo.css("width") === "0px") {
+            $localDemo.removeClass("localDemoHide");
+            $expressApp.addClass("expressAppHide");
+        } else {
+            $expressApp.removeClass("expressAppHide");
+            $localDemo.addClass("localDemoHide");
+        }
+    });
+
+    key("d", () => {
+        //if we can't see localhost show local host
         if ($serverLog.css("display") === "none") {
-        $serverLog.css("display", "block");
-        $expressApp.addClass("expressAppHide");
-    } else {
-        $expressApp.removeClass("expressAppHide");
-        $serverLog.css("display", "none");
-    }
+            $serverLog.css("display", "block");
+            $expressApp.addClass("expressAppHide");
+        } else {
+            $expressApp.removeClass("expressAppHide");
+            $serverLog.css("display", "none");
+        }
     });
 
     function strip(s) {
@@ -111,26 +181,27 @@
 
             _.forEach(lines, (l) => {
                 if (l !== "") {
-                $serverLog.append(strip(l) + "<br/>");
-            }
-        });
+                    $serverLog.append(strip(l) + "<br/>");
+                }
+            });
 
             lineBuffer = lines[lines.length - 1];
         });
     }
 
-    redirectOutput(node.stdout);
-    redirectOutput(node.stderr);
 
     let checkServerRunning = setInterval(() => {
+        //check on the express application
         request(expressAppUrl, (error, response, body) => {
-        if (!error && response.statusCode == 200) {
-            $expressApp.attr("src", expressAppUrl);
-            $loading.css("display", "none");
-            $expressApp.css("display", "block");
-            clearInterval(checkServerRunning);
-        }
-    });
+            if (!error && response.statusCode == 200) {
+                $expressApp.attr("src", expressAppUrl);
+                $loading.css("display", "none");
+                $expressApp.css("display", "block");
+                clearInterval(checkServerRunning);
+            }
+
+        });
+
     }, 1000);
 </script>
 </body>
