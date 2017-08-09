@@ -73,6 +73,7 @@ h1 {
     text-align: center;
     justify-content: center;
     margin-left: 25px;
+    margin-top: 5px;
 }
 
 #logo {
@@ -105,7 +106,7 @@ div#preview-container {
 }
 
 #launch-demo {
-    margin-top: 100px;
+    margin-top: 90px;
 }
 
 #launch-btn {
@@ -133,7 +134,7 @@ div#preview-container {
 
 #title {
     position: relative
-    margin-top: -60px;
+    margin-top: -65px;
 }
 
 /*image preview*/
