@@ -13,7 +13,7 @@
     "script-name":"\"Plankton Populations.exe\"",
     "path": "C:\\Users\\The Wall jr\\Desktop\\Updated Plankton\\7136_planktonpopulations\\Plankton Populations\\Plankton Populations\\bin\\x86\\Debug",
     "icon-img": "placeholder-icon.png",
-    "images": [""],
+    "images": ["LvLq_thumb1.jpg","LvLq_thumb2.jpg","LvLq_thumb3.jpg"],
     "description": "Living Liquid is a collaboration with the Exploratorium and the Darwin Project to create an interactive exhibit showing the growth and localization of phytoplankton in the world’s oceans. Phytoplankton are microscopic autotrophs, responsible for half of the world’s oxygen production. Visualizations of an ocean circulation model and a plankton simulation are combined with object-based and touch interactions to allow users to explore and investigate plankton populations all over the world. The exhibit is currently on display in the life science section of the Exploratorium.",
     "collaborators": ["Isaac Liao", "Oliver Jahn", "Stephanie Dutkiewicz", "Joyce Ma","Jennifer Frazier","Prof. Kwan-liu Ma"]
   },
