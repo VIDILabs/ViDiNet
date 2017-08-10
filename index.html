@@ -108,12 +108,14 @@
         //receives messages from the express-application, these messages are explicitly to open a demo
         darwin_node.on('message', function (data) {
             //Data in this case should be the script name that needs to be opened.
+            var response = data.split("::");
 
             //If running a script, check if script is already running
-            if (data === "script") {
-                script = require("child_process").exec('./run.sh', {
-                        cwd: '/Users/keshavdasu/Documents/MyDocs/livingliquidjs' //Change this to the correct
-                    },
+            if (response.length > 1) {
+                var filename = response[0],
+                path = response[1];
+
+                script = require("child_process").exec(filename, {cwd: path },
                     function (error, stdout, stderr) {
                         console.log('stdout: ' + stdout);
                         console.log('stderr: ' + stderr);
@@ -122,10 +124,6 @@
                         }
                     });
 
-            } else {
-                //If running an exe
-                const shell = electron.shell;
-                shell.openExternal(`file://${__dirname}/` + data);
             }
 
         });
@@ -139,13 +137,14 @@
 
         //receives messages from the express-application, these messages are explicitly to open a demo
         win_node.on('message', function (data) {
-            //Data in this case should be the script name that needs to be opened.
+            //Data in this case should be the script name :: path.
+            var response = data.split("::");
 
             //If running a script, check if script is already running
-            if (data === "script") {
-                script = require("child_process").exec('run.bat', {
-                        cwd: 'C:\\Users\\kesha\\OneDrive\\Documents\\livingliquidjs' //Change this to the correct path
-                    },
+            if (response.length > 1) {
+                var filename = response[0],
+                    path = response[1];
+                script = require("child_process").exec(filename, {cwd: path},
                     function (error, stdout, stderr) {
                         console.log('stdout: ' + stdout);
                         console.log('stderr: ' + stderr);
@@ -154,10 +153,6 @@
                         }
                     });
 
-            } else {
-                //If running an exe
-                const shell = electron.shell;
-                shell.openExternal(`file://${__dirname}/` + data);
             }
 
         });

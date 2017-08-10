@@ -40,12 +40,30 @@ router.post('/ajax', function(req, res) {
     }
 });
 
+
+function findObjectWithValue(dict,value){
+    for(i = 0; i < dict.length; i++){
+        var title = dict[i]["title"];
+        if(title === value){
+            return dict[i];
+        }
+    }
+    return null;
+}
+
 router.post('/open-app',function(req,res){
+    var library = require('../public/config/config');
     if(req.xhr || req.accepts('json,html')==='json'){
         //Send the request to open the current application
         var aName = req.body["application"];
-        process.send(aName);
-        res.json({success: true, data: aName}); //For debugging
+        var current_app = findObjectWithValue(library,aName);
+        var status = "failed couldn't find corresponding app in config";
+        if(current_app){
+            var message = current_app["script-name"] + "::" + current_app["path"];
+            status = "Success";
+            process.send(message);
+        }
+        res.json({success: true, data: status}); //For debugging
     } else {
         res.redirect(303, '/ajax');
     }
