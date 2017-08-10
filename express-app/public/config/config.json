@@ -19,7 +19,7 @@
   "collaborators": ["Isaac Liao", "Oliver Jahn", "Stephanie Dutkiewicz", "Joyce Ma","Jennifer Frazier","Prof. Kwan-liu Ma"]
 },
   {
-    "title": "Graph Vis",
+    "title": "Predictive Graph Vis",
     "script-name":"link",
     "url":"http://graphvis.net/wgl",
     "path": "none",
