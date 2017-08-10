@@ -1,6 +1,7 @@
 [{
   "title":"Mapping Migrations",
   "script-name":"./run.sh",
+  "url":"http://localhost:3000/",
   "path": "/Users/keshavdasu/Documents/MyDocs/livingliquidjs",
   "icon-img": "placeholder-icon.png",
   "images": ["oceantracks.png","visitors.JPG","oceantracks.png"],
@@ -9,9 +10,21 @@
 },
 {
   "title": "Plankton Populations",
-  "app-name":"test.docx",
+  "script-name":"link",
+  "url":"http://localhost:3000/",
+  "path": "/Users/keshavdasu/Documents/MyDocs/livingliquidjs",
   "icon-img": "placeholder-icon.png",
   "images": [""],
   "description": "Living Liquid is a collaboration with the Exploratorium and the Darwin Project to create an interactive exhibit showing the growth and localization of phytoplankton in the world’s oceans. Phytoplankton are microscopic autotrophs, responsible for half of the world’s oxygen production. Visualizations of an ocean circulation model and a plankton simulation are combined with object-based and touch interactions to allow users to explore and investigate plankton populations all over the world. The exhibit is currently on display in the life science section of the Exploratorium.",
   "collaborators": ["Isaac Liao", "Oliver Jahn", "Stephanie Dutkiewicz", "Joyce Ma","Jennifer Frazier","Prof. Kwan-liu Ma"]
-}]
+},
+  {
+    "title": "Graph Vis",
+    "script-name":"link",
+    "url":"http://graphvis.net/wgl",
+    "path": "none",
+    "icon-img": "placeholder-icon.png",
+    "images": [""],
+    "description":  "TBD",
+    "collaborators": ["Prof. Kwan-liu Ma"]
+  }]

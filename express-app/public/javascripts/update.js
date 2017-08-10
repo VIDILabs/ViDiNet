@@ -33,6 +33,7 @@ function updatePreview(div_id){
 
 
 function openApplication(aName){
+    $('#launch-btn').prop('disabled', true);
     $.ajax({
         type : 'POST',
         data: { application: aName},

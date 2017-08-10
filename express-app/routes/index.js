@@ -59,7 +59,7 @@ router.post('/open-app',function(req,res){
         var current_app = findObjectWithValue(library,aName);
         var status = "failed couldn't find corresponding app in config";
         if(current_app){
-            var message = current_app["script-name"] + "::" + current_app["path"];
+            var message = current_app["script-name"] + "::" + current_app["path"] + "::" + current_app["url"];
             status = "Success";
             process.send(message);
         }
