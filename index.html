@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>ViDiNet</title>
 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=VT323" rel='stylesheet' type='text/css'/>
+    <link href="http://fonts.googleapis.com/css?family=VT323" rel='stylesheet' type='text/css'/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -49,8 +49,8 @@
 
         .expressAppHide {
             flex: 0 1;
-            width: 0px;
-            height: 0px;
+            width: 0;
+            height: 0;
         }
 
         .localDemo {
@@ -62,8 +62,8 @@
 
         .localDemoHide {
             flex: 0 1;
-            width: 0px;
-            height: 0px;
+            width: 0;
+            height: 0;
         }
     </style>
 </head>
@@ -103,7 +103,7 @@
         const darwin_node = spawn("node", ["./express-app/bin/www"], {
             cwd: process.cwd(),
             stdio: [null, null, null, 'ipc']
-        })
+        });
 
         //receives messages from the express-application, these messages are explicitly to open a demo
         darwin_node.on('message', function (data) {
@@ -112,7 +112,7 @@
             //If running a script, check if script is already running
             if (data === "script") {
                 script = require("child_process").exec('./run.sh', {
-                        cwd: '/Users/keshavdasu/Documents/MyDocs/livingliquidjs' //Change this to the give path....
+                        cwd: '/Users/keshavdasu/Documents/MyDocs/livingliquidjs' //Change this to the correct
                     },
                     function (error, stdout, stderr) {
                         console.log('stdout: ' + stdout);
@@ -135,7 +135,7 @@
     } else if (process.platform === 'win32') {
         //WINDOWS
 
-        const win_node = spawn(".\\node.exe", ["./express-app/bin/www"], {cwd: process.cwd()});
+        const win_node = spawn(".\\node.exe", ["./express-app/bin/www"], {cwd: process.cwd(),  stdio: [null, null, null, 'ipc']});
 
         //receives messages from the express-application, these messages are explicitly to open a demo
         win_node.on('message', function (data) {
@@ -143,7 +143,16 @@
 
             //If running a script, check if script is already running
             if (data === "script") {
-
+                script = require("child_process").exec('run.bat', {
+                        cwd: 'C:\\Users\\kesha\\OneDrive\\Documents\\livingliquidjs' //Change this to the correct path
+                    },
+                    function (error, stdout, stderr) {
+                        console.log('stdout: ' + stdout);
+                        console.log('stderr: ' + stderr);
+                        if (error !== null) {
+                            console.log('exec error: ' + error);
+                        }
+                    });
 
             } else {
                 //If running an exe
