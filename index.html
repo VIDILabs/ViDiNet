@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>ViDiNet</title>
 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=VT323" rel='stylesheet' type='text/css'/>
+    <link href="http://fonts.googleapis.com/css?family=VT323" rel='stylesheet' type='text/css'/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -49,8 +49,8 @@
 
         .expressAppHide {
             flex: 0 1;
-            width: 0px;
-            height: 0px;
+            width: 0;
+            height: 0;
         }
 
         .localDemo {
@@ -62,8 +62,8 @@
 
         .localDemoHide {
             flex: 0 1;
-            width: 0px;
-            height: 0px;
+            width: 0;
+            height: 0;
         }
     </style>
 </head>
@@ -74,7 +74,7 @@
 </div>
 <div id="serverLog"></div>
 <webview id="expressApp" class="expressApp"></webview>
-<webview id="localDemo" class="localDemo localDemoHide" src="http://localhost:3000/"></webview>
+<webview id="localDemo" class="localDemo localDemoHide" autosize="on" src="http://localhost:3000/"></webview>
 
 <script>
     window.$ = window.jQuery = require("./node_modules/jquery/dist/jquery.min.js");
@@ -83,6 +83,7 @@
     // 'darwin' for mac
     // 'win32' for windows (doesn't matter the architecture)
     console.log(process.platform);
+    var localDemoURL = "http://localhost:3000/";
 
     const expressAppUrl = "http://127.0.0.1:3030",
         spawn = require("child_process").spawn,
@@ -103,17 +104,21 @@
         const darwin_node = spawn("node", ["./express-app/bin/www"], {
             cwd: process.cwd(),
             stdio: [null, null, null, 'ipc']
-        })
+        });
 
         //receives messages from the express-application, these messages are explicitly to open a demo
         darwin_node.on('message', function (data) {
             //Data in this case should be the script name that needs to be opened.
+            var response = data.split("::");
 
             //If running a script, check if script is already running
-            if (data === "script") {
-                script = require("child_process").exec('./run.sh', {
-                        cwd: '/Users/keshavdasu/Documents/MyDocs/livingliquidjs' //Change this to the give path....
-                    },
+            if (response.length > 1) {
+                var filename = response[0],
+                path = response[1];
+
+                localDemoURL = response[2];
+
+                script = require("child_process").exec(filename, {cwd: path },
                     function (error, stdout, stderr) {
                         console.log('stdout: ' + stdout);
                         console.log('stderr: ' + stderr);
@@ -122,10 +127,6 @@
                         }
                     });
 
-            } else {
-                //If running an exe
-                const shell = electron.shell;
-                shell.openExternal(`file://${__dirname}/` + data);
             }
 
         });
@@ -135,20 +136,26 @@
     } else if (process.platform === 'win32') {
         //WINDOWS
 
-        const win_node = spawn(".\\node.exe", ["./express-app/bin/www"], {cwd: process.cwd()});
+        const win_node = spawn(".\\node.exe", ["./express-app/bin/www"], {cwd: process.cwd(),  stdio: [null, null, null, 'ipc']});
 
         //receives messages from the express-application, these messages are explicitly to open a demo
         win_node.on('message', function (data) {
-            //Data in this case should be the script name that needs to be opened.
+            //Data in this case should be the script name :: path.
+            var response = data.split("::");
 
             //If running a script, check if script is already running
-            if (data === "script") {
+            if (response.length > 1) {
+                var filename = response[0],
+                    path = response[1];
+                script = require("child_process").exec(filename, {cwd: path},
+                    function (error, stdout, stderr) {
+                        console.log('stdout: ' + stdout);
+                        console.log('stderr: ' + stderr);
+                        if (error !== null) {
+                            console.log('exec error: ' + error);
+                        }
+                    });
 
-
-            } else {
-                //If running an exe
-                const shell = electron.shell;
-                shell.openExternal(`file://${__dirname}/` + data);
             }
 
         });
@@ -163,7 +170,7 @@
         if ($localDemo.css("width") === "0px") {
             $localDemo.removeClass("localDemoHide");
             var refreshDemo =  document.getElementById('localDemo');
-            refreshDemo.reload(); //refresh the localhost view...
+            refreshDemo.loadURL(localDemoURL); //refresh the localhost view...
             $expressApp.addClass("expressAppHide");
         } else {
             $expressApp.removeClass("expressAppHide");
