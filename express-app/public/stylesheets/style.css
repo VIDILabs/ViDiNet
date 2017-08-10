@@ -45,11 +45,13 @@ h1 {
     color: white;
     padding-right: 0px;
     width: 250px;
+    margin-left: 35px;
 }
 
 .icon {
     height: 70px;
 }
+
 
 .icon-tab {
     padding-top: 5px;
@@ -61,6 +63,8 @@ h1 {
 .icon-tab:hover {
     -webkit-filter: invert(100%);
     filter: invert(100%);
+    width: 325px;
+    margin-left: -35px;
 }
 
 .active {
@@ -118,6 +122,7 @@ div#preview-container {
 
 #description {
     width: 500px;
+    margin-top: 10px;
 }
 
 /*#desc-text {
@@ -127,7 +132,7 @@ div#preview-container {
 }*/
 
 #desc-text {
-    font-size: 18px;
+    font-size: 23px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
@@ -135,6 +140,11 @@ div#preview-container {
 #title {
     position: relative
     margin-top: -65px;
+}
+
+#button{
+    margin-top: 30px;
+    position: relative;
 }
 
 /*image preview*/
@@ -153,7 +163,7 @@ div#preview-container {
     vertical-align: top;
     display: inline-block;
     *display: inline;
-    zoom: 1;
+    zoom: 1.85;
 }
 
 .stretch {
@@ -168,15 +178,53 @@ div#preview-container {
     max-height: 300px;
     height: 150px;
 }
-
-.btn-secondary {
-    color: #ffffff;
-    background-color: #777;
-    border-color: #555;
+.button2 {
+  border-radius: 4px;
+  background-color: #3A90C5;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
 
-.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open .dropdown-toggle.btn-secondary {
-    color: #ffffff;
-    background-color: #888;
-    border-color: #444;
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
+
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button2:hover span {
+  padding-right: 25px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*.button2 {
+    color: white;
+    background-color: #3A90C5;
+    border-color: #3A90C5;
+}*/
+
+/*.button2:hover, .button2:focus, .button2:active, .button2.active, .open .dropdown-toggle.button2 {
+    color: white;
+    background-color: #3A90C5;
+    border-color: #3A90C5;
+}*/
