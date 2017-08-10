@@ -2,6 +2,7 @@
   {
     "title":"Mapping Migrations",
     "script-name":"run.bat",
+    "url":"http://localhost:3000/",
     "path": "C:\\Users\\The Wall jr\\Desktop\\Demos\\TOPP",
     "icon-img": "placeholder-icon.png",
     "images": ["oceantracks.png","visitors.JPG","oceantracks.png"],
@@ -10,6 +11,7 @@
   },
   {
     "title": "Plankton Populations",
+    "url":"http://localhost:3000/",
     "script-name":"\"Plankton Populations.exe\"",
     "path": "C:\\Users\\The Wall jr\\Desktop\\Updated Plankton\\7136_planktonpopulations\\Plankton Populations\\Plankton Populations\\bin\\x86\\Debug",
     "icon-img": "placeholder-icon.png",
@@ -35,6 +37,16 @@
     "path": "none",
     "icon-img": "placeholder-icon.png",
     "images": [""],
+    "description":  "TBD",
+    "collaborators": ["Prof. Kwan-liu Ma"]
+  },
+  {
+    "title": "VIDi 3D Touch",
+    "script-name":"vidi3d-touch.exe",
+    "url":"http://localhost:3000/",
+    "path": "C:\\Users\\The Wall jr\\Desktop\\Demos\\V3D\\vidi3d-touch",
+    "icon-img": "placeholder-icon.png",
+    "images": ["Screenshot1.png,Screenshot2.png,Screenshot3.png"],
     "description":  "TBD",
     "collaborators": ["Prof. Kwan-liu Ma"]
   }]
