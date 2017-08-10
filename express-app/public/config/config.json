@@ -1,27 +1,37 @@
-[{
-  "title":"Mapping Migrations",
-  "script-name":"./run.sh",
-  "url":"http://localhost:3000/",
-  "path": "/Users/keshavdasu/Documents/MyDocs/livingliquidjs",
-  "icon-img": "placeholder-icon.png",
-  "images": ["oceantracks.png","visitors.JPG","oceantracks.png"],
-  "description": "Mapping Migrations is a collaboration with the Exploratorium that uses data from the TOPP program to create an interactive exhibit that allows museum visitors to explore migratory marine animal trajectories over time. Data from the TOPP program can be used to characterize a multitude of marine animals behaviors in response to factors such as environmental and biological variables. Visualizations of the marine animals trajectories over a year are accompanied by the ability to highlight the tagging location and sex patterns such that visitors can make meaningful comparisons of these data attributes. The exhibit is currently on display in the life science section of the Exploratorium.",
-  "collaborators": ["Jaquelin Chu","Chien-Hsin Hseuh","Joyce Ma","Jennifer Frazier","Prof. Kwan-liu Ma"]
-},
-{
-  "title": "Plankton Populations",
-  "script-name":"link",
-  "url":"http://localhost:3000/",
-  "path": "/Users/keshavdasu/Documents/MyDocs/livingliquidjs",
-  "icon-img": "placeholder-icon.png",
-  "images": [""],
-  "description": "Living Liquid is a collaboration with the Exploratorium and the Darwin Project to create an interactive exhibit showing the growth and localization of phytoplankton in the world’s oceans. Phytoplankton are microscopic autotrophs, responsible for half of the world’s oxygen production. Visualizations of an ocean circulation model and a plankton simulation are combined with object-based and touch interactions to allow users to explore and investigate plankton populations all over the world. The exhibit is currently on display in the life science section of the Exploratorium.",
-  "collaborators": ["Isaac Liao", "Oliver Jahn", "Stephanie Dutkiewicz", "Joyce Ma","Jennifer Frazier","Prof. Kwan-liu Ma"]
-},
+[
+  {
+    "title":"Mapping Migrations",
+    "script-name":"run.bat",
+    "path": "C:\\Users\\The Wall jr\\Desktop\\Demos\\TOPP",
+    "icon-img": "placeholder-icon.png",
+    "images": ["oceantracks.png","visitors.JPG","oceantracks.png"],
+    "description": "Mapping Migrations is a collaboration with the Exploratorium that uses data from the TOPP program to create an interactive exhibit that allows museum visitors to explore migratory marine animal trajectories over time. Data from the TOPP program can be used to characterize a multitude of marine animals behaviors in response to factors such as environmental and biological variables. Visualizations of the marine animals trajectories over a year are accompanied by the ability to highlight the tagging location and sex patterns such that visitors can make meaningful comparisons of these data attributes. The exhibit is currently on display in the life science section of the Exploratorium.",
+    "collaborators": ["Jaquelin Chu","Chien-Hsin Hseuh","Joyce Ma","Jennifer Frazier","Prof. Kwan-liu Ma"]
+  },
+  {
+    "title": "Plankton Populations",
+    "script-name":"\"Plankton Populations.exe\"",
+    "path": "C:\\Users\\The Wall jr\\Desktop\\Updated Plankton\\7136_planktonpopulations\\Plankton Populations\\Plankton Populations\\bin\\x86\\Debug",
+    "icon-img": "placeholder-icon.png",
+    "images": [""],
+    "description": "Living Liquid is a collaboration with the Exploratorium and the Darwin Project to create an interactive exhibit showing the growth and localization of phytoplankton in the world’s oceans. Phytoplankton are microscopic autotrophs, responsible for half of the world’s oxygen production. Visualizations of an ocean circulation model and a plankton simulation are combined with object-based and touch interactions to allow users to explore and investigate plankton populations all over the world. The exhibit is currently on display in the life science section of the Exploratorium.",
+    "collaborators": ["Isaac Liao", "Oliver Jahn", "Stephanie Dutkiewicz", "Joyce Ma","Jennifer Frazier","Prof. Kwan-liu Ma"]
+  },
   {
     "title": "Predictive Graph Vis",
     "script-name":"link",
     "url":"http://graphvis.net/wgl",
+    "path": "none",
+    "icon-img": "placeholder-icon.png",
+    "images": [""],
+    "description":  "TBD",
+    "collaborators": ["Prof. Kwan-liu Ma"]
+  }
+,
+  {
+    "title": "",
+    "script-name":"link",
+    "url":"http://kwon.cs.ucdavis.edu/graph?id=power",
     "path": "none",
     "icon-img": "placeholder-icon.png",
     "images": [""],
