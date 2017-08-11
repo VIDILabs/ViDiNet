@@ -1,12 +1,13 @@
 body {
     font: 14px "Lato", sans-serif;
     color: white;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 #body-color {
     background-color: black;
+    overflow: hidden;
 }
 
 a {
@@ -41,13 +42,13 @@ h1 {
 /* Library related */
 #library {
     position: absolute;
-    top: 0px;
+    top: 0;
     z-index: 1;
     background-color: black;
     height: 100vh;
     font: 14px "Lato", sans-serif;
     color: white;
-    padding-right: 0px;
+    padding-right: 0;
     width: 250px;
     margin-left: 35px;
 }
@@ -109,7 +110,7 @@ div#preview-container {
 }
 
 #demo-title {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     padding-bottom: 10px;
     color: white;
     font-size: 17px;
@@ -132,11 +133,6 @@ div#preview-container {
     margin-top: 10px;
 }
 
-/*#desc-text {
-    font-size: 18px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-}*/
 
 #desc-text {
     font-size: 21px;
@@ -146,7 +142,7 @@ div#preview-container {
 
 #title {
     position: relative;
-    margin-top: 0px;
+    margin-top: 0;
 }
 #appTitle{
     font-size: 50px;

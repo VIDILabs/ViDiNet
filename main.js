@@ -9,7 +9,7 @@ let template = [
         { label: 'custom action 1', accelerator: 'CmdOrCtrl+R',       click() { console.log('go!') } },
         { label: 'custom action 2', accelerator: 'Shift+Command+R', click() { console.log('go!') } },
         { type: 'separator' },
-        { role: 'quit' }
+        { role: 'quit' , accelerator: 'esc'}
     ] }
 ];
 const menu = Menu.buildFromTemplate(template)
@@ -17,6 +17,8 @@ const menu = Menu.buildFromTemplate(template)
 function createWindow() {
     mainWindow = new BrowserWindow({
         autoHideMenuBar: true,
+        fullscreen: true,
+        frame: false,
         width: 1068,
         height: 600,
         minWidth: 1068,

@@ -112,10 +112,12 @@
             var response = data.split("::");
 
             //If running a script, check if script is already running
-            if(response[0] === "link")
-            if (response.length > 1) {
+            if(response[0] === "link"){
+                localDemoURL = response[2];
+
+            } else if (response.length > 1) {
                 var filename = response[0],
-                path = response[1];
+                    path = response[1];
 
                 localDemoURL = response[2];
 
@@ -145,7 +147,10 @@
             var response = data.split("::");
 
             //If running a script, check if script is already running
-            if (response.length > 1) {
+            if(response[0] === "link"){
+                localDemoURL = response[2];
+
+            }else if (response.length > 1) {
                 var filename = response[0],
                     path = response[1];
                 script = require("child_process").exec(filename, {cwd: path},
@@ -167,7 +172,6 @@
 
 
     key("a", () => {
-        console.log($localDemo.css("width"));
         if ($localDemo.css("width") === "0px") {
             $localDemo.removeClass("localDemoHide");
             var refreshDemo =  document.getElementById('localDemo');
