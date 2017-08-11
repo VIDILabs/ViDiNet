@@ -112,6 +112,7 @@
             var response = data.split("::");
 
             //If running a script, check if script is already running
+            if(response[0] === "link")
             if (response.length > 1) {
                 var filename = response[0],
                 path = response[1];

@@ -1,30 +1,51 @@
-[{
-  "title":"Mapping Migrations",
-  "script-name":"./run.sh",
-  "url":"http://localhost:3000/",
-  "path": "/Users/keshavdasu/Documents/MyDocs/livingliquidjs",
-  "icon-img": "placeholder-icon.png",
-  "images": ["oceantracks.png","visitors.JPG","oceantracks.png"],
-  "description": "Mapping Migrations is a collaboration with the Exploratorium that uses data from the TOPP program to create an interactive exhibit that allows museum visitors to explore migratory marine animal trajectories over time. Data from the TOPP program can be used to characterize a multitude of marine animals behaviors in response to factors such as environmental and biological variables. Visualizations of the marine animals trajectories over a year are accompanied by the ability to highlight the tagging location and sex patterns such that visitors can make meaningful comparisons of these data attributes. The exhibit is currently on display in the life science section of the Exploratorium.",
-  "collaborators": ["Jaquelin Chu","Chien-Hsin Hseuh","Joyce Ma","Jennifer Frazier","Prof. Kwan-liu Ma"]
-},
-{
-  "title": "Plankton Populations",
-  "script-name":"link",
-  "url":"http://localhost:3000/",
-  "path": "/Users/keshavdasu/Documents/MyDocs/livingliquidjs",
-  "icon-img": "placeholder-icon.png",
-  "images": [""],
-  "description": "Living Liquid is a collaboration with the Exploratorium and the Darwin Project to create an interactive exhibit showing the growth and localization of phytoplankton in the world’s oceans. Phytoplankton are microscopic autotrophs, responsible for half of the world’s oxygen production. Visualizations of an ocean circulation model and a plankton simulation are combined with object-based and touch interactions to allow users to explore and investigate plankton populations all over the world. The exhibit is currently on display in the life science section of the Exploratorium.",
-  "collaborators": ["Isaac Liao", "Oliver Jahn", "Stephanie Dutkiewicz", "Joyce Ma","Jennifer Frazier","Prof. Kwan-liu Ma"]
-},
+[
+  {
+    "title":"Mapping Migrations",
+    "script-name":"run.bat",
+    "url":"http://localhost:3000/",
+    "path": "C:\\Users\\The Wall jr\\Desktop\\Demos\\TOPP",
+    "icon-img": "placeholder-icon.png",
+    "images": ["oceantracks.png","visitors.JPG","oceantracks.png"],
+    "description": "Mapping Migrations is a collaboration with the Exploratorium that uses data from the TOPP program to create an interactive exhibit that allows museum visitors to explore migratory marine animal trajectories over time. Data from the TOPP program can be used to characterize a multitude of marine animals behaviors in response to factors such as environmental and biological variables. Visualizations of the marine animals trajectories over a year are accompanied by the ability to highlight the tagging location and sex patterns such that visitors can make meaningful comparisons of these data attributes. The exhibit is currently on display in the life science section of the Exploratorium.",
+    "collaborators": ["Jaquelin Chu","Chien-Hsin Hseuh","Joyce Ma","Jennifer Frazier","Prof. Kwan-liu Ma"]
+  },
+  {
+    "title": "Plankton Populations",
+    "url":"http://localhost:3000/",
+    "script-name":"\"Plankton Populations.exe\"",
+    "path": "C:\\Users\\The Wall jr\\Desktop\\Updated Plankton\\7136_planktonpopulations\\Plankton Populations\\Plankton Populations\\bin\\x86\\Debug",
+    "icon-img": "placeholder-icon.png",
+    "images": ["LvLq_thumb1.jpg","LvLq_thumb2.jpg","LvLq_thumb3.jpg"],
+    "description": "Living Liquid is a collaboration with the Exploratorium and the Darwin Project to create an interactive exhibit showing the growth and localization of phytoplankton in the world’s oceans. Phytoplankton are microscopic autotrophs, responsible for half of the world’s oxygen production. Visualizations of an ocean circulation model and a plankton simulation are combined with object-based and touch interactions to allow users to explore and investigate plankton populations all over the world. The exhibit is currently on display in the life science section of the Exploratorium.",
+    "collaborators": ["Isaac Liao", "Oliver Jahn", "Stephanie Dutkiewicz", "Joyce Ma","Jennifer Frazier","Prof. Kwan-liu Ma"]
+  },
   {
     "title": "Predictive Graph Vis",
     "script-name":"link",
     "url":"http://graphvis.net/wgl",
     "path": "none",
     "icon-img": "placeholder-icon.png",
-    "images": [""],
-    "description":  "TBD",
+    "images": ["WGL-1.png","WGL-2.png","WGL-3.png"],
+    "description":  "Using different methods for laying out a graph can lead to very different visual appearances, with which the viewer perceives different information. Selecting a “good” layout method is thus important for visualizing a graph. The selection can be highly subjective and dependent on the given task. A common approach to selecting a good layout is to use aesthetic criteria and visual inspection. However, fully calculating various layouts and their associated aesthetic metrics is computationally expensive. In this paper, we present a machine learning approach to large graph visualization based on computing the topological similarity of graphs using graph kernels. For a given graph, our approach can show what the graph would look like in different layouts and estimate their corresponding aesthetic metrics. An important contribution of our work is the development of a new framework to design graph kernels. Our experimental study shows that our estimation calculation is considerably faster than computing the actual layouts and their aesthetic metrics. Also, our graph kernels outperform the state-of-the-art ones in both time and accuracy. In addition, we conducted a user study to demonstrate that the topological similarity computed with our graph kernel matches perceptual similarity assessed by human users.",
+    "collaborators": ["Prof. Kwan-liu Ma"]
+  },
+  {
+    "title": "Bullies and Victims",
+    "script-name":"link",
+    "url":"http://kwonoh.net/bullying",
+    "path": "none",
+    "icon-img": "placeholder-icon.png",
+    "images": ["teaser.png","bullying.png"],
+    "description": "We analyze a friendship and aggression network collected from a group of high school students (8th–12th graders). We depict social behaviors among the studied subjects by designing a visualization that allows us to answer questions like ‘Do bullying tendencies change among students in grades?’ and ‘How likely is a bullying incident would be reported by the victim, other peers, or the bully?’ A node-link diagram succinctly shows the relationships between individuals. Its layout was designed to reveal both friendship and grade information, while directionally animated edges indicate the type of social relationships between students. Node color indicates each student’s tendency to be a bully or a victim, and size denotes the number of reported bully-related incidents, as an aggressor or a recipient.",
+    "collaborators": ["Prof. Kwan-liu Ma"]
+  },
+  {
+    "title": "VIDi 3D Touch",
+    "script-name":"vidi3d-touch.exe",
+    "url":"http://localhost:3000/",
+    "path": "C:\\Users\\The Wall jr\\Desktop\\Demos\\V3D\\vidi3d-touch",
+    "icon-img": "placeholder-icon.png",
+    "images": ["Screenshot1.png", "Screenshot2.png","Screenshot3.png"],
+    "description":  "VIDi 3D Touch is a multi-touch volume visualization system. It allows users to interact with the 3D images intuitively by simply touch the screen. Users can use touch gestures to pan, zoom, and rotate the 3D objects, use cutting planes and slices to navigate inside the images, and use transfer function presets to view different layers within the data. The system supports analysis for both medical imaging data and scientific simulation data.",
     "collaborators": ["Prof. Kwan-liu Ma"]
   }]
