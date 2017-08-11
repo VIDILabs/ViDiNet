@@ -34,6 +34,10 @@ h1 {
     width: 10px;
 }
 
+#img-carousel{
+    margin-top: 10px;
+}
+
 /* Library related */
 #library {
     position: absolute;
@@ -49,7 +53,8 @@ h1 {
 }
 
 .icon {
-    height: 70px;
+    height: 80px;
+    margin-bottom: 8px;
 }
 
 
@@ -107,6 +112,7 @@ div#preview-container {
     margin-bottom: 0px;
     padding-bottom: 10px;
     color: white;
+    font-size: 17px;
 }
 
 #launch-demo {
@@ -132,14 +138,17 @@ div#preview-container {
 }*/
 
 #desc-text {
-    font-size: 23px;
+    font-size: 21px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
 
 #title {
     position: relative;
-    margin-top: -65px;
+    margin-top: 0px;
+}
+#appTitle{
+    font-size: 27px;
 }
 
 #button{
