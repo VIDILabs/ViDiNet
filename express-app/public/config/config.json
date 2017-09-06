@@ -24,28 +24,38 @@
     "script-name":"link",
     "url":"http://graphvis.net/wgl",
     "path": "none",
-    "icon-img": "icons/network_2.png",
+    "icon-img": "icons/network_4.png",
     "images": ["WGL-1.png","WGL-2.png","WGL-3.png"],
     "description":  "Using different methods for laying out a graph can lead to very different visual appearances, with which the viewer perceives different information. Selecting a “good” layout method is thus important for visualizing a graph. The selection can be highly subjective and dependent on the given task. A common approach to selecting a good layout is to use aesthetic criteria and visual inspection. However, fully calculating various layouts and their associated aesthetic metrics is computationally expensive. In this paper, we present a machine learning approach to large graph visualization based on computing the topological similarity of graphs using graph kernels. For a given graph, our approach can show what the graph would look like in different layouts and estimate their corresponding aesthetic metrics. An important contribution of our work is the development of a new framework to design graph kernels. Our experimental study shows that our estimation calculation is considerably faster than computing the actual layouts and their aesthetic metrics. Also, our graph kernels outperform the state-of-the-art ones in both time and accuracy. In addition, we conducted a user study to demonstrate that the topological similarity computed with our graph kernel matches perceptual similarity assessed by human users.",
     "collaborators": ["Prof. Kwan-liu Ma"]
   },
   {
-    "title": "Bullies and Victims",
+    "title": "Bully Network",
     "script-name":"link",
     "url":"http://kwonoh.net/bullying",
     "path": "none",
-    "icon-img": "icons/network_1.png",
+    "icon-img": "icons/network_3.png",
     "images": ["teaser.png","bullying.png"],
     "description": "We analyze a friendship and aggression network collected from a group of high school students (8th–12th graders). We depict social behaviors among the studied subjects by designing a visualization that allows us to answer questions like ‘Do bullying tendencies change among students in grades?’ and ‘How likely is a bullying incident would be reported by the victim, other peers, or the bully?’ A node-link diagram succinctly shows the relationships between individuals. Its layout was designed to reveal both friendship and grade information, while directionally animated edges indicate the type of social relationships between students. Node color indicates each student’s tendency to be a bully or a victim, and size denotes the number of reported bully-related incidents, as an aggressor or a recipient.",
     "collaborators": ["Prof. Kwan-liu Ma"]
   },
   {
-    "title": "ViDi 3D Touch",
+    "title": "VolVis",
     "script-name":"vidi3d-touch.exe",
     "url":"http://localhost:3000/",
     "path": "C:\\Users\\The Wall jr\\Desktop\\Demos\\V3D\\vidi3d-touch",
-    "icon-img": "icons/human_1.png",
+    "icon-img": "icons/human_2.png",
     "images": ["Screenshot1.png", "Screenshot2.png","Screenshot3.png"],
     "description":  "VIDi 3D Touch is a multi-touch volume visualization system. It allows users to interact with the 3D images intuitively by simply touch the screen. Users can use touch gestures to pan, zoom, and rotate the 3D objects, use cutting planes and slices to navigate inside the images, and use transfer function presets to view different layers within the data. The system supports analysis for both medical imaging data and scientific simulation data.",
+    "collaborators": ["Prof. Kwan-liu Ma"]
+  },
+  {
+    "title": "FUSION",
+    "script-name":"link",
+    "url":"http://franzasauer.com/demos/fusion/",
+    "path": "none",
+    "icon-img": "icons/human_2.png",
+    "images": ["fusion-1.png", "fusion-2.png","fusion-3.png"],
+    "description":"This interactive web application aims to educate about fusion technology and research. The visualization teaches about the various components that make up Tokamak devices and allows for interactive exploration of real data produced by large-scale scientific simulations. Furthermore, this tool can be used by fusion researchers to present new scientific discoveries through a more intuitive medium." ,
     "collaborators": ["Prof. Kwan-liu Ma"]
   }]
