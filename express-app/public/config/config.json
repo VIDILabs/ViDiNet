@@ -48,4 +48,14 @@
     "images": ["Screenshot1.png", "Screenshot2.png","Screenshot3.png"],
     "description":  "VIDi 3D Touch is a multi-touch volume visualization system. It allows users to interact with the 3D images intuitively by simply touch the screen. Users can use touch gestures to pan, zoom, and rotate the 3D objects, use cutting planes and slices to navigate inside the images, and use transfer function presets to view different layers within the data. The system supports analysis for both medical imaging data and scientific simulation data.",
     "collaborators": ["Prof. Kwan-liu Ma"]
+  },
+  {
+    "title": "FUSION",
+    "script-name":"link",
+    "url":"http://franzasauer.com/demos/fusion/",
+    "path": "none",
+    "icon-img": "icons/human_2.png",
+    "images": ["fusion-1.png", "fusion-2.png","fusion-3.png"],
+    "description":"This interactive web application aims to educate about fusion technology and research. The visualization teaches about the various components that make up Tokamak devices and allows for interactive exploration of real data produced by large-scale scientific simulations. Furthermore, this tool can be used by fusion researchers to present new scientific discoveries through a more intuitive medium." ,
+    "collaborators": ["Prof. Kwan-liu Ma"]
   }]

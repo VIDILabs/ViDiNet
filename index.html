@@ -89,7 +89,7 @@
         spawn = require("child_process").spawn,
         // For electron-packager change cwd in spawn to app.getAppPath() and
         // uncomment the app require below
-        //app = require('electron').remote.app,
+        app = require('electron').remote.app,
         request = require("request"),
         _ = require("lodash"),
         key = require("keymaster"),
@@ -101,10 +101,7 @@
     if (process.platform === 'darwin') {
         //OSX
 
-        const darwin_node = spawn("node", ["./express-app/bin/www"], {
-            cwd: process.cwd(),
-            stdio: [null, null, null, 'ipc']
-        });
+        const darwin_node = spawn("node", ["./express-app/bin/www"], {cwd: app.getAppPath(), stdio: [null, null, null, 'ipc']});
 
         //receives messages from the express-application, these messages are explicitly to open a demo
         darwin_node.on('message', function (data) {
@@ -112,15 +109,14 @@
             var response = data.split("::");
 
             //If running a script, check if script is already running
-            if(response[0] === "link"){
-                localDemoURL = response[2];
+            localDemoURL = response[2];
 
-            } else if (response.length > 1) {
+            if (response.length > 1 && !response[0].includes("link")) {
                 var filename = response[0],
                     path = response[1];
 
                 localDemoURL = response[2];
-
+                console.log(response);
                 script = require("child_process").exec(filename, {cwd: path },
                     function (error, stdout, stderr) {
                         console.log('stdout: ' + stdout);
@@ -139,7 +135,7 @@
     } else if (process.platform === 'win32') {
         //WINDOWS
 
-        const win_node = spawn(".\\node.exe", ["./express-app/bin/www"], {cwd: process.cwd(),  stdio: [null, null, null, 'ipc']});
+        const win_node = spawn(".\\node.exe", ["./express-app/bin/www"], {cwd: app.getAppPath(),  stdio: [null, null, null, 'ipc']});
 
         //receives messages from the express-application, these messages are explicitly to open a demo
         win_node.on('message', function (data) {
@@ -147,12 +143,12 @@
             var response = data.split("::");
 
             //If running a script, check if script is already running
-            if(response[0] === "link"){
-                localDemoURL = response[2];
+            localDemoURL = response[2];
 
-            }else if (response.length > 1) {
+            if (response.length > 1  && !response[0].includes("link")) {
                 var filename = response[0],
                     path = response[1];
+
                 script = require("child_process").exec(filename, {cwd: path},
                     function (error, stdout, stderr) {
                         console.log('stdout: ' + stdout);

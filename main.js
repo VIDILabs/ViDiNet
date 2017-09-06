@@ -26,7 +26,7 @@ function createWindow() {
     });
     console.log("Making window...");
     mainWindow.loadURL(`file://${__dirname}/index.html`);
-    mainWindow.webContents.openDevTools(); //For Debugging Electron side console messages
+    // mainWindow.webContents.openDevTools(); //For Debugging Electron side console messages
     mainWindow.on("closed", function() {
         mainWindow = null;
     });
