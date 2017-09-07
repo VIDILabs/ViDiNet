@@ -65,6 +65,15 @@
             width: 0;
             height: 0;
         }
+
+        .back{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+
+
     </style>
 </head>
 
@@ -75,6 +84,8 @@
 <div id="serverLog"></div>
 <webview id="expressApp" class="expressApp"></webview>
 <webview id="localDemo" class="localDemo localDemoHide" autosize="on" src="http://localhost:3000/"></webview>
+<button id="back" class="back btn btn-primary">Primary</button>
+
 
 <script>
     window.$ = window.jQuery = require("./node_modules/jquery/dist/jquery.min.js");
@@ -166,18 +177,27 @@
         redirectOutput(win_node.stderr);
     }
 
-
-    key("a", () => {
+    //Show a Demo that has been Launched
+    $( "#back" ).click(function() {
         if ($localDemo.css("width") === "0px") {
             $localDemo.removeClass("localDemoHide");
             var refreshDemo =  document.getElementById('localDemo');
             refreshDemo.loadURL(localDemoURL); //refresh the localhost view...
             $expressApp.addClass("expressAppHide");
+            document.getElementById("back").innerHTML="Back";
+
         } else {
             $expressApp.removeClass("expressAppHide");
             $localDemo.addClass("localDemoHide");
+            document.getElementById("back").innerHTML="Go";
+
         }
     });
+
+
+
+
+
 
     key("d", () => {
         //if we can't see localhost show local host

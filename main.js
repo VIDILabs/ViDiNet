@@ -17,7 +17,7 @@ const menu = Menu.buildFromTemplate(template)
 function createWindow() {
     mainWindow = new BrowserWindow({
         autoHideMenuBar: true,
-        fullscreen: true,
+        fullscreen: false,
         frame: false,
         width: 1068,
         height: 600,
@@ -26,7 +26,7 @@ function createWindow() {
     });
     console.log("Making window...");
     mainWindow.loadURL(`file://${__dirname}/index.html`);
-    // mainWindow.webContents.openDevTools(); //For Debugging Electron side console messages
+    mainWindow.webContents.openDevTools(); //For Debugging Electron side console messages
     mainWindow.on("closed", function() {
         mainWindow = null;
     });

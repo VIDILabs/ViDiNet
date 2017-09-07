@@ -54,7 +54,7 @@
     "script-name":"link",
     "url":"http://franzasauer.com/demos/fusion/",
     "path": "none",
-    "icon-img": "icons/human_2.png",
+    "icon-img": "icons/fusion1.png",
     "images": ["fusion-1.png", "fusion-2.png","fusion-3.png"],
     "description":"This interactive web application aims to educate about fusion technology and research. The visualization teaches about the various components that make up Tokamak devices and allows for interactive exploration of real data produced by large-scale scientific simulations. Furthermore, this tool can be used by fusion researchers to present new scientific discoveries through a more intuitive medium." ,
     "collaborators": ["Prof. Kwan-liu Ma"]
