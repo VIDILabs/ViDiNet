@@ -69,11 +69,11 @@
         .back{
             position: absolute;
             bottom: 0;
-            left: 0;
+            right: 0;
         }
 
         .back-size{
-            height: 150px;
+            height: 100px;
         }
 
 
@@ -100,6 +100,7 @@
     // 'win32' for windows (doesn't matter the architecture)
     console.log(process.platform);
     var localDemoURL = "http://localhost:3000/";
+    var TOPPisRunning = false; //Exists because of the way Mapping Migrations (TOPP) is executed
 
     const expressAppUrl = "http://127.0.0.1:3030",
         spawn = require("child_process").spawn,
@@ -129,7 +130,7 @@
             //If running a script, check if script is already running
             localDemoURL = response[2];
 
-            if(response[0].includes("link")){
+            if(response[0].includes("link") || (response[1].includes("TOPP") && TOPPisRunning)){
                 if ($localDemo.css("width") === "0px") {
                     $localDemo.removeClass("localDemoHide");
                     var refreshDemo =  document.getElementById('localDemo');
@@ -140,7 +141,7 @@
                 $("#back").show();
             }
 
-            if (response.length > 1 && !response[0].includes("link")) {
+            if (response.length > 1 && !response[0].includes("link") && !(response[1].includes("TOPP") && TOPPisRunning)) {
                 var filename = response[0],
                     path = response[1];
 
@@ -156,6 +157,8 @@
                     });
 
             }
+
+            if(response[1].includes("TOPP")){ TOPPisRunning = true; }
 
         });
 
@@ -174,7 +177,7 @@
             //If running a script, check if script is already running
             localDemoURL = response[2];
 
-            if(response[0].includes("link")){
+            if(response[0].includes("link") || (response[1].includes("TOPP") && TOPPisRunning)){
                 if ($localDemo.css("width") === "0px") {
                     $localDemo.removeClass("localDemoHide");
                     var refreshDemo =  document.getElementById('localDemo');
@@ -185,7 +188,7 @@
                 $("#back").show();
             }
 
-            if (response.length > 1  && !response[0].includes("link")) {
+            if (response.length > 1  && !response[0].includes("link")  && !(response[1].includes("TOPP") && TOPPisRunning)) {
                 var filename = response[0],
                     path = response[1];
 
@@ -201,6 +204,8 @@
             }
 
         });
+
+        if(response[1].includes("TOPP")){ TOPPisRunning = true; }
 
         redirectOutput(win_node.stdout);
         redirectOutput(win_node.stderr);
