@@ -1,4 +1,4 @@
-# ViDiNet
+# ViDiNet v1.2
 
 ## Development
 Application launcher for the demonstrations that are displayed on the touch-table
@@ -21,3 +21,5 @@ Make sure electron-packager is installed via npm globally (i.e npm install -g el
 - [windows deployment example] 
    - electron-packager . --platform=win32 --arch=x64
 
+## TODO
+- Check to see if the application (exe , jar, or script) is currently being executed
