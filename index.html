@@ -69,8 +69,13 @@
         .back{
             position: absolute;
             bottom: 0;
-            right: 0;
+            left: 0;
         }
+
+        .back-size{
+            height: 150px;
+        }
+
 
 
 
@@ -84,7 +89,7 @@
 <div id="serverLog"></div>
 <webview id="expressApp" class="expressApp"></webview>
 <webview id="localDemo" class="localDemo localDemoHide" autosize="on" src="http://localhost:3000/"></webview>
-<button id="back" class="back btn btn-primary">Primary</button>
+<button id="back" class="back btn btn-primary"><img class="back-size" src="images/back.png"></button>
 
 
 <script>
@@ -130,7 +135,7 @@
                     var refreshDemo =  document.getElementById('localDemo');
                     refreshDemo.loadURL(localDemoURL); //refresh the localhost view...
                     $expressApp.addClass("expressAppHide");
-                    document.getElementById("back").innerHTML="Back";
+//                    document.getElementById("back").innerHTML="Back";
                 }
                 $("#back").show();
             }
@@ -175,7 +180,7 @@
                     var refreshDemo =  document.getElementById('localDemo');
                     refreshDemo.loadURL(localDemoURL); //refresh the localhost view...
                     $expressApp.addClass("expressAppHide");
-                    document.getElementById("back").innerHTML="Back";
+//                    document.getElementById("back").innerHTML="Back";
                 }
                 $("#back").show();
             }
@@ -208,12 +213,12 @@
             var refreshDemo =  document.getElementById('localDemo');
             refreshDemo.loadURL(localDemoURL); //refresh the localhost view...
             $expressApp.addClass("expressAppHide");
-            document.getElementById("back").innerHTML="Back";
+//            document.getElementById("back").innerHTML="Back";
 
         } else {
             $expressApp.removeClass("expressAppHide");
             $localDemo.addClass("localDemoHide");
-            document.getElementById("back").innerHTML="Go";
+//            document.getElementById("back").innerHTML="Go";
             $("#back").hide();
 
         }
