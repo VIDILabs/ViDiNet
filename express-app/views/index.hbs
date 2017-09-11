@@ -6,8 +6,8 @@
         </div>
             <!-- For each demo create a block -->
             {{#each libraryContent}}
-                <a href="#" class="demo-btn" onClick="updatePreview({{@index}})">
-                    <div class="icon-tab">
+                <a  href="#" class="demo-btn" onClick="updatePreview({{@index}})">
+                    <div id="lib-icons-{{@index}}" class="icon-tab">
                         <img class="icon" src="/images/{{this.icon-img}}" alt="Icon">
                         <p id="demo-title">{{this.title}}</p>
                     </div>

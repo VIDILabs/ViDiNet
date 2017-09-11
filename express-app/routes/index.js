@@ -33,7 +33,7 @@ router.post('/ajax', function(req, res) {
             var result = template(library[id]);
 
             //have the template source (words) ... so now just compile it with data?
-            res.json({success: true , data :result });
+            res.json({success: true , data :result , dataLength: library.length});
         });
     } else {
         res.redirect(303, '/ajax');

@@ -13,9 +13,24 @@ $.ajax({
     success : function(response) {
         var html = response["data"];
         $("#preview").html(html);
+        $("#lib-icons-0").addClass("active");
     }
 });
 
+
+function setActive(div_id, length){
+
+    var tag = "#lib-icons-" + div_id.toString();
+    var i = 0;
+
+    console.log(length);
+    for(i = 0; i < length; i++) {
+        var div = "#lib-icons-" + i.toString();
+        $(div).removeClass("active");
+    }
+
+    $(tag).addClass("active");
+}
 
 function updatePreview(div_id){
     $.ajax({
@@ -25,7 +40,10 @@ function updatePreview(div_id){
         url: '/ajax',
         success : function(response) {
             var html = response["data"];
+            var length = response["dataLength"];
             $("#preview").html(html);
+
+            setActive(div_id, length);
         }
     });
 }
@@ -33,7 +51,7 @@ function updatePreview(div_id){
 
 
 function openApplication(aName){
-    $('#launch-btn').prop('disabled', true);
+    // $('#launch-btn').prop('disabled', true);
     $.ajax({
         type : 'POST',
         data: { application: aName},

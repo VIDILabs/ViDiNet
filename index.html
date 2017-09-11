@@ -109,6 +109,8 @@
         $localDemo = $("#localDemo"),
         $loading = $("#loading");
 
+    $("#back").hide(); //Hide Back Button
+
     if (process.platform === 'darwin') {
         //OSX
 
@@ -121,6 +123,17 @@
 
             //If running a script, check if script is already running
             localDemoURL = response[2];
+
+            if(response[0].includes("link")){
+                if ($localDemo.css("width") === "0px") {
+                    $localDemo.removeClass("localDemoHide");
+                    var refreshDemo =  document.getElementById('localDemo');
+                    refreshDemo.loadURL(localDemoURL); //refresh the localhost view...
+                    $expressApp.addClass("expressAppHide");
+                    document.getElementById("back").innerHTML="Back";
+                }
+                $("#back").show();
+            }
 
             if (response.length > 1 && !response[0].includes("link")) {
                 var filename = response[0],
@@ -156,6 +169,17 @@
             //If running a script, check if script is already running
             localDemoURL = response[2];
 
+            if(response[0].includes("link")){
+                if ($localDemo.css("width") === "0px") {
+                    $localDemo.removeClass("localDemoHide");
+                    var refreshDemo =  document.getElementById('localDemo');
+                    refreshDemo.loadURL(localDemoURL); //refresh the localhost view...
+                    $expressApp.addClass("expressAppHide");
+                    document.getElementById("back").innerHTML="Back";
+                }
+                $("#back").show();
+            }
+
             if (response.length > 1  && !response[0].includes("link")) {
                 var filename = response[0],
                     path = response[1];
@@ -190,6 +214,7 @@
             $expressApp.removeClass("expressAppHide");
             $localDemo.addClass("localDemoHide");
             document.getElementById("back").innerHTML="Go";
+            $("#back").hide();
 
         }
     });
